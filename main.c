@@ -12,7 +12,8 @@ void main(void)
 {
 	int tp;
 	int a = 0X0BB8;
-	//int b = 0X0006;
+	int b = 0X0006;
+	b = b * 0x04 &0x01;
 	k18_init();
 	
 	TRIS_COL1 = 0;
@@ -23,6 +24,7 @@ void main(void)
 	TRIS_COL6 = 0;
 	TRIS_COL7 = 0;
 	TRIS_COL8 = 0;
+
 	
 	COL1 = 1;
 	COL2 = 1;
@@ -40,14 +42,14 @@ void main(void)
 		tp = get_temp();
 		tp &= 0X3FFF;
 		
-		if(tp > a) //下半部分的灯
+		if(tp > a) //涓嬪崐閮ㄥ垎鐨勭伅
 		{
 			PORTD = 0X0F;
         	Delay10Ms(10);                                                                                                                                                                      
         	PORTD = 0X00;//0X00
         	Delay10Ms(10);   
   		}
-  		else if(tp < (a - 0X64)) //上半部分的灯
+  		else if(tp < (a - 0X64)) //涓婂崐閮ㄥ垎鐨勭伅
   		{
 	  		PORTD = 0XF0;
 	  		Delay10Ms(10);   

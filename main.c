@@ -12,8 +12,7 @@ void main(void)
 {
 	int tp;
 	int a = 0X0BB8;
-	int b = 0X0006;
-	b = b * 0x04 &0x01;
+	//int b = 0X0006;
 	k18_init();
 	
 	TRIS_COL1 = 0;
